@@ -1,0 +1,118 @@
+.nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // padding: 1rem;
+    font-size: 1rem;
+    background-color: #143b27;
+
+    &__menu {
+        margin-right: 2rem;
+        display: flex;
+        // gap: 1rem;
+        font-family: sans-serif;
+
+        &--link:link,
+        &--link:visited {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            padding: 1rem .5rem;
+            border-radius: 5px;
+        }
+
+        &--link:focus,
+        &--link:hover {
+            background-color: rgba(#fff,.2);
+        }
+    }
+
+    &__logo {
+        grid-column: logo-start / logo-end;
+        grid-row: 1 / -1;
+        margin: 0 auto;
+        padding-left: 2.5rem;        
+
+
+        &--img {
+            width: 6rem;
+        }
+    }
+
+    &__link {        
+        
+        
+        &--pwd {
+            grid-row: 2 / -1;
+            grid-column: pwd-start / pwd-end;
+            align-self: end;
+            margin-top: .7rem;            
+            font-size: 0.7rem;
+        }
+
+        &--reg {
+            grid-row: 2 / -1;
+            grid-column: login-start / login-end;
+            align-self: end;
+            margin-top: .7rem;            
+            font-size: 0.8rem;
+            margin: 0 auto;
+        }
+    }
+
+    &__link:link,
+    &__link:visited {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+        font-family: sans-serif;
+        transition: all 0.3s;
+        // padding: 0.5rem;
+    }
+
+    &__link:focus,
+    &__link:hover {
+        color: #a33e40;
+        text-decoration: underline;
+    }
+
+    &__container {
+        margin-left: 2rem;
+        display: grid;
+        align-items: start;
+        column-gap: 1rem;
+        grid-template-columns: [user-start] min-content [user-end pwd-start] min-content [pwd-end login-start] min-content [login-end];
+        grid-template-rows: repeat(2, min-content);
+    }
+
+    &__input {
+        border: none;
+        border-bottom: 0.2rem solid #fff;
+        transition: all 0.2s;
+        padding: 0.5rem;
+        box-shadow: 0 0.3rem 1rem rgba(#aaa, 0.2);
+        border-radius: 3px;
+
+        &-container {
+            grid-row: 1 / 2;
+            align-self: center;
+            &--usr {
+                grid-column: user-start / user-end;
+            }
+
+            &--pwd {
+                grid-column: pwd-start / pwd-end;
+            }
+        }
+
+        &:focus {
+            outline: none;
+            border-bottom: 0.2rem solid #912a2c;
+        }
+    }
+}
+
+.active {
+    background-color: rgba(#fff,.2);
+}

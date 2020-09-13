@@ -12,89 +12,39 @@ body {
 .btn {
     &__login {
         border: none;
-        padding: .6rem;
-        background-image: linear-gradient(to right bottom,#912a2c, #143b27);
+        padding: 0.6rem;
+        background-image: linear-gradient(to right bottom, #912a2c, #143b27);
         color: #fff;
         text-transform: uppercase;
-        font-weight: 600;        
+        font-weight: 600;
         cursor: pointer;
-        transition: all .4s;
-        box-shadow: 0 .3rem 1rem rgba(#aaa,.2);
+        transition: all 0.4s;
+        box-shadow: 0 0.3rem 1rem rgba(#aaa, 0.2);
         border-radius: 5px;
 
         &:hover {
-            background-image: linear-gradient(to left top,#912a2c, #143b27);
+            background-image: linear-gradient(to left top, #912a2c, #143b27);
             // box-shadow: 0 .8rem 2rem rgba(#aaa,.2);
             box-shadow: none;
             transform: scale(1.05);
             border-radius: 5px;
             // overflow: hidden;
             // backface-visibility: hidden;
-            
         }
     }
 
     &__container {
-        box-shadow: none; 
-        transition: all .2s;    
-        &:hover {        
-            box-shadow: 0 .3rem 1rem rgba(#aaa,.3);    
+        box-shadow: none;
+        transition: all 0.2s;
+
+        grid-row: 1 / 2;
+        grid-column: login-start / login-end;
+        align-self: center;
+
+        &:hover {
+            box-shadow: 0 0.3rem 1rem rgba(#aaa, 0.3);
             // overflow: hidden;
             backface-visibility: hidden;
-        }
-    }
-}
-
-.nav {
-    list-style: none;
-    // display: flex;
-    // align-items: center;
-    // justify-content: space-between;    
-    // padding: 1rem;  
-    font-size: 1rem;
-    background-color: #143b27;
-
-    &__logo {
-        margin: 0 2rem;
-
-        &--img {
-            width: 6rem;
-        }
-    }
-
-    &__link:link,
-    &__link:visited {
-        text-decoration: none;
-        color: #fff;
-        font-weight: 500;
-        font-family: sans-serif;
-        transition: all .3s;
-        padding: .5rem;
-    }
-
-    &__link:focus,
-    &__link:hover {
-        color: #a33e40;
-        text-decoration: underline;
-    }
-
-    &__container {
-        display: flex;
-        align-items: center;
-        gap: 1rem;        
-    }    
-
-    &__input {
-        border: none;
-        border-bottom: .2rem solid #fff;        
-        transition: all .2s;
-        padding: .5rem; 
-        box-shadow: 0 .3rem 1rem rgba(#aaa,.2);
-        border-radius: 3px;
-
-        &:focus {
-            outline: none;            
-            border-bottom: .2rem solid #912a2c;            
         }
     }
 }

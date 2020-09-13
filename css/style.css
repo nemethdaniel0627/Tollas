@@ -9,13 +9,13 @@ body {
 
 .btn__login {
   border: none;
-  padding: .6rem;
+  padding: 0.6rem;
   background-image: linear-gradient(to right bottom, #912a2c, #143b27);
   color: #fff;
   text-transform: uppercase;
   font-weight: 600;
   cursor: pointer;
-  transition: all .4s;
+  transition: all 0.4s;
   box-shadow: 0 0.3rem 1rem rgba(170, 170, 170, 0.2);
   border-radius: 5px; }
   .btn__login:hover {
@@ -26,40 +26,86 @@ body {
 
 .btn__container {
   box-shadow: none;
-  transition: all .2s; }
+  transition: all 0.2s;
+  grid-row: 1 / 2;
+  grid-column: login-start / login-end;
+  align-self: center; }
   .btn__container:hover {
     box-shadow: 0 0.3rem 1rem rgba(170, 170, 170, 0.3);
     backface-visibility: hidden; }
 
 .nav {
   list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-size: 1rem;
   background-color: #143b27; }
+  .nav__menu {
+    margin-right: 2rem;
+    display: flex;
+    font-family: sans-serif; }
+    .nav__menu--link:link, .nav__menu--link:visited {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      padding: 1rem .5rem;
+      border-radius: 5px; }
+    .nav__menu--link:focus, .nav__menu--link:hover {
+      background-color: rgba(255, 255, 255, 0.2); }
   .nav__logo {
-    margin: 0 2rem; }
+    grid-column: logo-start / logo-end;
+    grid-row: 1 / -1;
+    margin: 0 auto;
+    padding-left: 2.5rem; }
     .nav__logo--img {
       width: 6rem; }
+  .nav__link--pwd {
+    grid-row: 2 / -1;
+    grid-column: pwd-start / pwd-end;
+    align-self: end;
+    margin-top: .7rem;
+    font-size: 0.7rem; }
+  .nav__link--reg {
+    grid-row: 2 / -1;
+    grid-column: login-start / login-end;
+    align-self: end;
+    margin-top: .7rem;
+    font-size: 0.8rem;
+    margin: 0 auto; }
   .nav__link:link, .nav__link:visited {
     text-decoration: none;
     color: #fff;
     font-weight: 500;
     font-family: sans-serif;
-    transition: all .3s;
-    padding: .5rem; }
+    transition: all 0.3s; }
   .nav__link:focus, .nav__link:hover {
     color: #a33e40;
     text-decoration: underline; }
   .nav__container {
-    display: flex;
-    align-items: center;
-    gap: 1rem; }
+    margin-left: 2rem;
+    display: grid;
+    align-items: start;
+    column-gap: 1rem;
+    grid-template-columns: [user-start] min-content [user-end pwd-start] min-content [pwd-end login-start] min-content [login-end];
+    grid-template-rows: repeat(2, min-content); }
   .nav__input {
     border: none;
-    border-bottom: .2rem solid #fff;
-    transition: all .2s;
-    padding: .5rem;
+    border-bottom: 0.2rem solid #fff;
+    transition: all 0.2s;
+    padding: 0.5rem;
     box-shadow: 0 0.3rem 1rem rgba(170, 170, 170, 0.2);
     border-radius: 3px; }
+    .nav__input-container {
+      grid-row: 1 / 2;
+      align-self: center; }
+      .nav__input-container--usr {
+        grid-column: user-start / user-end; }
+      .nav__input-container--pwd {
+        grid-column: pwd-start / pwd-end; }
     .nav__input:focus {
       outline: none;
-      border-bottom: .2rem solid #912a2c; }
+      border-bottom: 0.2rem solid #912a2c; }
+
+.active {
+  background-color: rgba(255, 255, 255, 0.2); }
