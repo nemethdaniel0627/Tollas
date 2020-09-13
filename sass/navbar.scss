@@ -13,6 +13,16 @@
         // gap: 1rem;
         font-family: sans-serif;
 
+        &--toggle {
+            height: 100vh;
+            position: absolute;
+            z-index: 10;
+            background-color: #000;
+            top: 0;
+            right: 0;
+            transition: all .5s;            
+        }
+
         &--link:link,
         &--link:visited {
             text-decoration: none;
@@ -26,6 +36,10 @@
         &--link:hover {
             background-color: rgba(#fff,.2);
         }
+
+        @media only screen and (max-width: 1200px) {
+            display: none;
+        } 
     }
 
     &__logo {
@@ -109,6 +123,66 @@
         &:focus {
             outline: none;
             border-bottom: 0.2rem solid #912a2c;
+        }
+    }
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__btn {        
+        background-color: #fff;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover &--item::before {
+            top: -.6rem;
+        }
+
+        &:hover &--item::after {
+            top: .6rem;
+        }
+
+        &--item {
+            content: "";
+            // border: 1px solid black;
+            background-color: black;
+            height: 2px;
+            transition: all .2s;
+            width: 50%;
+            position: relative;
+
+            &:hover::before {
+                top: -.8rem;
+            }
+
+            &:hover::after {
+                top: .8rem;
+            }
+
+            &::after {
+                content: "";
+                width: 100%;
+                height: 2px;
+                transition: all .2s;
+                position: absolute;
+                top: .5rem;
+                background-color: black;
+            }
+
+            &::before {
+                content: "";
+                width: 100%;
+                height: 2px;
+                transition: all .2s;          
+                position: absolute;
+                top: -.5rem;
+                background-color: black;
+            }
         }
     }
 }
