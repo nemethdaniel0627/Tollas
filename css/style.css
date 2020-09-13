@@ -46,13 +46,19 @@ body {
     display: flex;
     font-family: sans-serif; }
     .nav__menu--toggle {
-      height: 100vh;
+      height: 2rem;
+      width: 2rem;
       position: absolute;
-      z-index: 10;
+      z-index: -1;
       background-color: #000;
-      top: 0;
-      right: 0;
-      transition: all .5s; }
+      border-radius: 50%;
+      top: 2rem;
+      right: 1.5rem;
+      transition: all .5s;
+      font-size: 1px; }
+      @media only screen and (max-width: 1200px) {
+        .nav__menu--toggle {
+          z-index: 1; } }
     .nav__menu--link:link, .nav__menu--link:visited {
       text-decoration: none;
       color: #fff;
@@ -71,6 +77,11 @@ body {
     padding-left: 2.5rem; }
     .nav__logo--img {
       width: 6rem; }
+    @media only screen and (max-width: 1200px) {
+      .nav__logo {
+        order: 1;
+        margin: 0 2rem;
+        padding: 0; } }
   .nav__link--pwd {
     grid-row: 2 / -1;
     grid-column: pwd-start / pwd-end;
@@ -100,6 +111,11 @@ body {
     column-gap: 1rem;
     grid-template-columns: [user-start] min-content [user-end pwd-start] min-content [pwd-end login-start] min-content [login-end];
     grid-template-rows: repeat(2, min-content); }
+    @media only screen and (max-width: 1200px) {
+      .nav__container {
+        order: 2;
+        margin-left: 0;
+        margin-right: auto; } }
   .nav__input {
     border: none;
     border-bottom: 0.2rem solid #fff;
@@ -119,6 +135,21 @@ body {
       border-bottom: 0.2rem solid #912a2c; }
   .nav__checkbox {
     display: none; }
+    .nav__checkbox:checked ~ .nav__menu--toggle {
+      z-index: 10;
+      top: 0;
+      right: 0;
+      width: 20%;
+      height: 100vh;
+      border-radius: 0; }
+    .nav__checkbox:checked ~ .nav__btn .nav__btn--item {
+      background-color: transparent; }
+    .nav__checkbox:checked ~ .nav__btn .nav__btn--item::before {
+      top: 0;
+      transform: rotate(225deg); }
+    .nav__checkbox:checked ~ .nav__btn .nav__btn--item::after {
+      transform: rotate(135deg);
+      top: 0; }
   .nav__btn {
     background-color: #fff;
     width: 3rem;
@@ -126,7 +157,18 @@ body {
     border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    margin-right: 1rem;
+    position: absolute;
+    top: 1.5rem;
+    right: 0;
+    z-index: 100;
+    display: none; }
+    @media only screen and (max-width: 1200px) {
+      .nav__btn {
+        display: flex;
+        order: 3;
+        justify-self: flex-end; } }
     .nav__btn:hover .nav__btn--item::before {
       top: -.6rem; }
     .nav__btn:hover .nav__btn--item::after {
@@ -138,10 +180,6 @@ body {
       transition: all .2s;
       width: 50%;
       position: relative; }
-      .nav__btn--item:hover::before {
-        top: -.8rem; }
-      .nav__btn--item:hover::after {
-        top: .8rem; }
       .nav__btn--item::after {
         content: "";
         width: 100%;
