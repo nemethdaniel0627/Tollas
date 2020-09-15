@@ -55,16 +55,24 @@ body {
       top: 2rem;
       right: 1.5rem;
       transition: all .5s;
-      font-size: 1px; }
+      visibility: hidden;
+      font-size: 1px;
+      display: flex;
+      flex-direction: column; }
       @media only screen and (max-width: 1200px) {
         .nav__menu--toggle {
           z-index: 1; } }
+      .nav__menu--toggle--link:link,
+      .nav__menu--toggle c--link:visited {
+        color: #fff;
+        margin: 2rem auto; }
     .nav__menu--link:link, .nav__menu--link:visited {
       text-decoration: none;
       color: #fff;
       font-size: 1rem;
       padding: 1rem .5rem;
-      border-radius: 5px; }
+      border-radius: 5px;
+      transition: all .2s; }
     .nav__menu--link:focus, .nav__menu--link:hover {
       background-color: rgba(255, 255, 255, 0.2); }
     @media only screen and (max-width: 1200px) {
@@ -76,7 +84,8 @@ body {
     margin: 0 auto;
     padding-left: 2.5rem; }
     .nav__logo--img {
-      width: 6rem; }
+      width: 6rem;
+      cursor: pointer; }
     @media only screen and (max-width: 1200px) {
       .nav__logo {
         order: 1;
@@ -141,7 +150,9 @@ body {
       right: 0;
       width: 20%;
       height: 100vh;
-      border-radius: 0; }
+      border-radius: 0;
+      font-size: 1rem;
+      visibility: visible; }
     .nav__checkbox:checked ~ .nav__btn .nav__btn--item {
       background-color: transparent; }
     .nav__checkbox:checked ~ .nav__btn .nav__btn--item::before {

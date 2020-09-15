@@ -23,12 +23,22 @@
             top: 2rem;
             right: 1.5rem;
             transition: all .5s;
-            // visibility: hidden;
+            visibility: hidden;
             // display: none;
-            font-size: 1px;
-            
+            font-size: 1px;            
+
+            display: flex;
+            flex-direction: column;
+
             @media only screen and (max-width: 1200px) {
                 z-index: 1;     
+            }
+
+            &--link:link,
+            c--link:visited {
+                color: #fff;
+                margin: 2rem auto;
+
             }
         }
 
@@ -39,6 +49,7 @@
             font-size: 1rem;
             padding: 1rem .5rem;
             border-radius: 5px;
+            transition: all .2s;
         }
 
         &--link:focus,
@@ -60,6 +71,7 @@
 
         &--img {
             width: 6rem;
+            cursor: pointer;
         }
 
         @media only screen and (max-width: 1200px) {
@@ -157,6 +169,8 @@
             width: 20%;
             height: 100vh;
             border-radius: 0;
+            font-size: 1rem;
+            visibility: visible;
         }
 
         &:checked ~ .nav__btn .nav__btn--item {
