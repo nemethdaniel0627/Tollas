@@ -12,16 +12,18 @@
 
 <body>
     <nav class="nav">
-        <div class="nav__container">            
-            <div class="nav__input-container nav__input-container--usr"><input class="nav__input" type="text" placeholder="Felhasználónév"></div>
-            <div class="nav__input-container nav__input-container--pwd"><input class="nav__input" type="text" placeholder="Jelszó"></div>
+        <div class="nav__container">
+            <div class="nav__input-container nav__input-container--usr"><input class="nav__input" type="text"
+                    placeholder="Felhasználónév"></div>
+            <div class="nav__input-container nav__input-container--pwd"><input class="nav__input" type="text"
+                    placeholder="Jelszó"></div>
             <div class="btn__container"><button class="btn__login">Belépés</button></div>
-            <div class="nav__link--pwd" ><a href="#" class="nav__link">Elfelejtett jelszó</a></div>
+            <div class="nav__link--pwd"><a href="#" class="nav__link">Elfelejtett jelszó</a></div>
             <div class="nav__link--reg"><a href="" class="nav__link ">Regisztráció</a></div>
         </div>
 
         <div class="nav__logo"><img class="nav__logo--img" src="img/logo.png" alt="Logo"></div>
-        
+
         <div class="nav__menu">
             <a href="#" class="active nav__menu--link">Főoldal</a>
             <a href="#" class="nav__menu--link">Kapcsolat</a>
@@ -38,6 +40,16 @@
         </label>
 
         <div class="nav__menu--toggle">
+            <div class="nav__menu--toggle--inputs">
+                <input class="nav__menu--toggle--input nav__menu--toggle--input--usr nav__input" type="text"
+                    placeholder="Felhasználónév">
+                <input class="nav__menu--toggle--input nav__menu--toggle--input--pwd nav__input" type="text"
+                    placeholder="Jelszó">
+                <div class="nav__menu--toggle--btn"><button
+                        class="nav__menu--toggle--btn__login btn__login">Belépés</button></div>
+                <div class="nav__menu--toggle--link--pwd"><a href="#" class="nav__link">Elfelejtett jelszó</a></div>
+                <div class="nav__menu--toggle--link--reg"><a href="" class="nav__link ">Regisztráció</a></div>
+            </div>
             <a href="#" class="active nav__menu--toggle--link">Főoldal</a>
             <a href="#" class="nav__menu--toggle--link">Kapcsolat</a>
             <a href="#" class="nav__menu--toggle--link">Közérdekű</a>
@@ -47,6 +59,8 @@
         </div>
 
     </nav>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

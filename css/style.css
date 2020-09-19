@@ -41,43 +41,6 @@ body {
   justify-content: space-between;
   font-size: 1rem;
   background-color: #143b27; }
-  .nav__menu {
-    margin-right: 2rem;
-    display: flex;
-    font-family: sans-serif; }
-    .nav__menu--toggle {
-      height: 2rem;
-      width: 2rem;
-      position: absolute;
-      z-index: -1;
-      background-color: #000;
-      border-radius: 50%;
-      top: 2rem;
-      right: 1.5rem;
-      transition: all .5s;
-      visibility: hidden;
-      font-size: 1px;
-      display: flex;
-      flex-direction: column; }
-      @media only screen and (max-width: 1200px) {
-        .nav__menu--toggle {
-          z-index: 1; } }
-      .nav__menu--toggle--link:link,
-      .nav__menu--toggle c--link:visited {
-        color: #fff;
-        margin: 2rem auto; }
-    .nav__menu--link:link, .nav__menu--link:visited {
-      text-decoration: none;
-      color: #fff;
-      font-size: 1rem;
-      padding: 1rem .5rem;
-      border-radius: 5px;
-      transition: all .2s; }
-    .nav__menu--link:focus, .nav__menu--link:hover {
-      background-color: rgba(255, 255, 255, 0.2); }
-    @media only screen and (max-width: 1200px) {
-      .nav__menu {
-        display: none; } }
   .nav__logo {
     grid-column: logo-start / logo-end;
     grid-row: 1 / -1;
@@ -125,6 +88,9 @@ body {
         order: 2;
         margin-left: 0;
         margin-right: auto; } }
+    @media only screen and (max-width: 700px) {
+      .nav__container {
+        display: none; } }
   .nav__input {
     border: none;
     border-bottom: 0.2rem solid #fff;
@@ -142,15 +108,85 @@ body {
     .nav__input:focus {
       outline: none;
       border-bottom: 0.2rem solid #912a2c; }
+  .nav__menu {
+    margin-right: 2rem;
+    display: flex;
+    font-family: sans-serif; }
+    .nav__menu--toggle {
+      height: 100vh;
+      width: 40%;
+      position: absolute;
+      z-index: -1;
+      background-color: #000;
+      top: 0;
+      right: 0;
+      transition: all .5s;
+      visibility: hidden;
+      font-size: 1px;
+      transform: scaleX(0);
+      transform-origin: right;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .nav__menu--toggle--inputs {
+        margin-top: 5.5rem;
+        width: 80%;
+        display: grid;
+        row-gap: .5rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, minmax(2rem, 1fr)); }
+      .nav__menu--toggle--btn {
+        grid-row: 3 / 4;
+        grid-column: 1 / -1;
+        width: 100%;
+        transition: all .3s; }
+        .nav__menu--toggle--btn__login {
+          width: 100%; }
+          .nav__menu--toggle--btn__login:hover {
+            transform: none; }
+        .nav__menu--toggle--btn:hover {
+          transform: scaleX(1.05);
+          box-shadow: 0 0.5rem 1.5rem rgba(170, 170, 170, 0.3); }
+      .nav__menu--toggle--input--usr {
+        grid-row: 1 / 2;
+        grid-column: 1 / -1; }
+      .nav__menu--toggle--input--pwd {
+        grid-row: 2 / 3;
+        grid-column: 1 / -1; }
+      @media only screen and (max-width: 1200px) {
+        .nav__menu--toggle {
+          z-index: 1;
+          transform: scaleX(0); } }
+      .nav__menu--toggle--link:link, .nav__menu--toggle--link:visited {
+        color: #fff;
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 1.5rem 0;
+        margin: 0rem 0;
+        text-align: center;
+        text-decoration: none;
+        font-family: sans-serif; }
+        .nav__menu--toggle--link:link:not(:nth-last-of-type(7)), .nav__menu--toggle--link:visited:not(:nth-last-of-type(7)) {
+          margin-top: .8rem; }
+      .nav__menu--toggle--link:hover, .nav__menu--toggle--link:focus {
+        background-color: rgba(255, 255, 255, 0.2); }
+    .nav__menu--link:link, .nav__menu--link:visited {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      padding: 1rem .5rem;
+      border-radius: 5px;
+      transition: all .2s; }
+    .nav__menu--link:focus, .nav__menu--link:hover {
+      background-color: rgba(255, 255, 255, 0.2); }
+    @media only screen and (max-width: 1200px) {
+      .nav__menu {
+        display: none; } }
   .nav__checkbox {
     display: none; }
     .nav__checkbox:checked ~ .nav__menu--toggle {
       z-index: 10;
-      top: 0;
-      right: 0;
-      width: 20%;
-      height: 100vh;
-      border-radius: 0;
+      transform: scaleX(1);
       font-size: 1rem;
       visibility: visible; }
     .nav__checkbox:checked ~ .nav__btn .nav__btn--item {
@@ -174,7 +210,8 @@ body {
     top: 1.5rem;
     right: 0;
     z-index: 100;
-    display: none; }
+    display: none;
+    cursor: pointer; }
     @media only screen and (max-width: 1200px) {
       .nav__btn {
         display: flex;
