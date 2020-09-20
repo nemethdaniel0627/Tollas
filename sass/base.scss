@@ -6,7 +6,36 @@
 
 body {
     font-size: 62.5%;
-    background-color: burlywood;    
+    background-color: burlywood;
+
+    // &::before {
+    //     content: "";
+    //     background-image: url(../img/badminton.png);
+    //     background-size: cover;
+    //     background-repeat: no-repeat;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     z-index: 5;
+    //     width: 100vw;
+    //     height: 100vh;
+    // }
+}
+
+.link {
+    display: inline-block;
+    transition: all 0.3s;    
+
+    & > a {
+        text-decoration: none;
+        color: #22b167;        
+        transition: all 0.3s;
+        font-weight: 600;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 
 .btn {
@@ -23,13 +52,18 @@ body {
         border-radius: 5px;
 
         &:hover {
-            background-image: linear-gradient(to left top, #912a2c, #143b27);
             // box-shadow: 0 .8rem 2rem rgba(#aaa,.2);
             box-shadow: none;
             transform: scale(1.05);
             border-radius: 5px;
+
             // overflow: hidden;
             // backface-visibility: hidden;
+        }
+
+        &:focus {
+            outline: none;
+            border: 1px solid #912a2c;
         }
     }
 
