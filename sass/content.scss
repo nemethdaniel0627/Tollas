@@ -2,21 +2,32 @@
     display: grid;
     grid-template-columns: minmax(min-content, 2fr) minmax(min-content, 1fr);
     grid-auto-rows: min-content;
-    padding: 1rem;
-    gap: 2rem;    
+    // padding: 1rem;
+    gap: 2rem;
+    
+    &__column {        
+        grid-column: 1 / 2;
+    }
+
+    &__news {
+        grid-column: 2 / -1;
+        grid-row: 1 / -1;
+        background-color: rgba(#912a2c, .9);
+    }
     
     &__container {
         font-size: 1.2rem;
         color: #bbb;
-        background-color: rgba(#912a2c, .9);
-        border-radius: 2%;
-        padding: 1rem 2rem;
+        background-color: rgba(#912a2c, .9);     
+        padding: 2rem;
         margin: 0 1rem;
         text-align: justify;
-        width: 100%;
+        width: 90%;
     }
 
     &__header {
         margin-bottom: 2rem;
+        font-size: 2rem;
+        color: #bbb;        
     }
 }

@@ -52,6 +52,8 @@ body {
         border-radius: 5px;
 
         &:hover {
+        background-image: linear-gradient(to left top, #912a2c, #143b27);
+
             // box-shadow: 0 .8rem 2rem rgba(#aaa,.2);
             box-shadow: none;
             transform: scale(1.05);
